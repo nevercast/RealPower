@@ -1,6 +1,7 @@
 package net.nevercast.realpower.proxy;
 
 import net.nevercast.realpower.block.CableBlock;
+import net.nevercast.realpower.block.LoadBlock;
 import net.nevercast.realpower.block.SupplyBlock;
 
 /**
@@ -8,13 +9,15 @@ import net.nevercast.realpower.block.SupplyBlock;
  */
 public class CommonProxy {
 
-    public static class Block {
+    public final static class Block {
         public static CableBlock cableBlock;
         public static SupplyBlock supplyBlock;
+        public static LoadBlock loadBlock;
     }
 
     public void registerBlocks() {
         Block.cableBlock = new CableBlock();
         Block.supplyBlock = new SupplyBlock();
+        Block.loadBlock = new LoadBlock();
     }
 }
