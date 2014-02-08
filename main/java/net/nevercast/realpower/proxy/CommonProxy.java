@@ -4,9 +4,6 @@ import net.nevercast.realpower.block.BlockCable;
 import net.nevercast.realpower.block.BlockLoad;
 import net.nevercast.realpower.block.BlockSupply;
 
-/**
- * Created by Josh on 8/02/14.
- */
 public class CommonProxy {
 
     public final static class Block {
