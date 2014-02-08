@@ -1,0 +1,15 @@
+[
+{
+  "modid": "net.nevercast.realpower",
+  "name": "Real Power",
+  "description": "Real Power.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["NeverCast", "Tjwato"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []}
+]
