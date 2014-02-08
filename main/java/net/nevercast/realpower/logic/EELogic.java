@@ -96,4 +96,14 @@ public class EELogic {
         double joules = wattsOfEnergy * timeStep;
         return (joules * material.getSpecificHeat()) / wireMass;
     }
+
+    /**
+     * Gets the power produced
+     * @param voltage Volts (V)
+     * @param amperes Flowing amperage (A)
+     * @return Watts (W)
+     */
+    public static double getPower(double voltage,double amperes){
+        return voltage*amperes;
+    }
 }
