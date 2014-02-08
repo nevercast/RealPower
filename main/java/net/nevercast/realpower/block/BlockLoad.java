@@ -4,11 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 /**
- * Created by Josh on 8/02/14.
+ * Created by Tyler on 8/02/14.
  */
-public class CableBlock extends Block {
+public class BlockLoad extends Block {
 
-    public CableBlock() {
+    public BlockLoad() {
         super(Material.iron);
     }
 }

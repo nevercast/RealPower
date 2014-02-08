@@ -6,9 +6,9 @@ import net.minecraft.block.material.Material;
 /**
  * Created by Josh on 8/02/14.
  */
-public class SupplyBlock extends Block {
+public class BlockCable extends Block {
 
-    public SupplyBlock( ) {
+    public BlockCable() {
         super(Material.iron);
     }
 }
