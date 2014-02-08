@@ -10,6 +10,12 @@ public class BlockCable extends BlockBasePowerBlock {
 
     public BlockCable() {
         super("cable");
+        setBlockBounds(0f,0.25f,0.25f,1f,0.75f,0.75f);
+    }
+
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
     }
 
     @Override

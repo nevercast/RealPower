@@ -7,14 +7,9 @@ import net.nevercast.realpower.api.IPowerObject;
 /**
  * Created by Josh on 8/02/14.
  */
-public class TileEntityLoad extends TileEntity implements IPowerLoad {
+public class TileEntityLoad extends TileEntityBase implements IPowerLoad {
     @Override
     public double getLoad() {
-        return 0;
-    }
-
-    @Override
-    public double getInternalResistance() {
-        return 0;
+        return 5;
     }
 }
