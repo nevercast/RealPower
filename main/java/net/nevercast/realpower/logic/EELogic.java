@@ -73,13 +73,30 @@ public class EELogic {
     /**
      * Get wire mass in grams
      * @param length length of wire (m)
-     * @param thinkness cross-sectional distance (m)
+     * @param thickness cross-sectional distance (m)
      * @param material Material the wire is made of
      * @return wire mass in grams
      */
-    public static double getWireMass(double length, double thinkness, ConductiveMaterial material) {
-        double volume = length * Math.pow(thinkness, 2);
+    public static double getWireMass(double length, double thickness, ConductiveMaterial material) {
+        double volume = length * Math.pow(thickness, 2);
         return material.density * volume;
+    }
+
+    /**
+     * Gets the Total surface area of the wire
+     * @param length Length in meters of the wire
+     * @param thickness cross-sectional distance (m)
+     * @param includeEnds if ends should be included in the calculation
+     * @return Total Surface Area in m^2
+     */
+    public static double getWireSurfaceArea(double length, double thickness, boolean includeEnds){
+        double result = 0;
+        double endArea = (Math.pow(thickness,2))*2;
+        result += (thickness*length)*4;
+        if(includeEnds){
+            result +=endArea;
+        }
+        return result;
     }
 
     /**
