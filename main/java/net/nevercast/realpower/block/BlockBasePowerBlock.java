@@ -5,9 +5,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IChatComponent;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.nevercast.realpower.tileentities.TileEntityBase;
 
@@ -18,9 +21,15 @@ public abstract class BlockBasePowerBlock extends BlockContainer {
     public BlockBasePowerBlock(String name) {
         super(Material.iron);
         setCreativeTab(CreativeTabs.tabAllSearch);
-        setBlockName("realpower." + name);
-        setBlockTextureName("realpower:" + name);
-        GameRegistry.registerBlock(this, name);
+    }
+
+    @Override
+    public void onBlockPlacedBy(World p_149689_1_, int p_149689_2_, int p_149689_3_, int p_149689_4_, EntityLivingBase p_149689_5_, ItemStack p_149689_6_) {
+        p_149689_1_.setBlockMetadataWithNotify(p_149689_2_,p_149689_3_,p_149689_4_,p_149689_6_.getItemDamage(), 3);
+    }
+
+    public boolean canJoin(IBlockAccess access, int x, int y, int z, int thisMeta) {
+        return false;
     }
 
     @Override

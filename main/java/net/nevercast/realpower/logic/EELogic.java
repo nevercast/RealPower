@@ -4,49 +4,8 @@ package net.nevercast.realpower.logic;
  * Created by Josh on 8/02/14.
  */
 public class EELogic {
-    public static final class ConductiveMaterial {
-        public static ConductiveMaterial Copper = new ConductiveMaterial(0.000000017D, 1084.62, 8.96, 0.4);
 
-        private double resistance;
-        private double meltingPoint;
-        private double density;
-        private double specificHeat;
-
-        public double getResistance() {
-            return resistance;
-        }
-
-        /**
-         * Melting point in Celsius
-         * @return
-         */
-        public double getMeltingPoint() {
-            return meltingPoint;
-        }
-
-        /**
-         * Material density in g/cm^3
-         * @return
-         */
-        public double getDensity() {
-            return density;
-        }
-
-        /**
-         * Get specific heat of material in Joules/gram Celsius
-         * @return
-         */
-        public double getSpecificHeat() {
-            return specificHeat;
-        }
-
-        public ConductiveMaterial(double resistance, double meltingPoint, double density, double specificHeat) {
-            this.resistance = resistance;
-            this.meltingPoint = meltingPoint;
-            this.density = density;
-            this.specificHeat = specificHeat;
-        }
-    }
+    public static final double SQRT_2 = Math.sqrt(2);
 
     /**
      * Get the resistance of a segment of wire
@@ -78,8 +37,8 @@ public class EELogic {
      * @return wire mass in grams
      */
     public static double getWireMass(double length, double thickness, ConductiveMaterial material) {
-        double volume = length * Math.pow(thickness, 2);
-        return material.density * volume;
+            double volume = length * Math.pow(thickness, 2);
+            return material.getDensity() * volume;
     }
 
     /**
@@ -123,4 +82,17 @@ public class EELogic {
     public static double getPower(double voltage,double amperes){
         return voltage*amperes;
     }
+
+    public static final class AC {
+
+        public static double getRMSVoltage(double volts) {
+            return volts / SQRT_2;
+        }
+
+        public static double getRMSPower(double watts) {
+            return watts / SQRT_2;
+        }
+    }
+
+
 }
